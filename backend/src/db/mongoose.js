@@ -14,7 +14,19 @@ const User = mongoose.model('User', {
   },
 });
 
-const test = new User({ name: 'Helton', age: 23 });
+const Task = mongoose.model('Task', {
+  description: {
+    type: String,
+  },
+  completed: {
+    type: Boolean,
+  },
+});
+
+const test = new Task({
+  description: 'Have to study nodejs',
+  completed: false,
+});
 
 test
   .save()
