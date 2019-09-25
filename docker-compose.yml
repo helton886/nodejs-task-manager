@@ -1,0 +1,24 @@
+version: '3'
+networks:
+  mongo:
+  web:
+services:
+  db:
+    image: mongo:4.2
+    networks:
+      - mongo
+    ports:
+      - 27017:27017
+  backend:
+    image: node:8.16
+    volumes:
+      - ./backend:/usr/task-app
+      # to make node_modules be create on docker, remove the comment below.
+      # - /usr/task-app/node_modules 
+    networks:
+      - web
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    # command: bash -c "cd /usr/task-app && ls && npm i && npm run dev"
