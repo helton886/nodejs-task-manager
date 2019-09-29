@@ -1,6 +1,6 @@
 const express = require('express');
 const Task = require('../models/task');
-const router = express.Router();
+const router = new express.Router();
 
 router.post('/tasks', async (req, res) => {
   const task = new Task(req.body);
@@ -43,17 +43,17 @@ router.patch('/tasks/:id', async (req, res) => {
   if (!isValidUpdate) {
     return res.status(404).send({ error: 'wrong update keys!' });
   }
-
   try {
-    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const task = await Task.findById(req.params.id);
+    updates.forEach(key => (task[key] = req.body[key]));
+    await task.save();
+
     if (!task) {
       return res.status(404).send();
     }
     res.send(task);
   } catch (e) {
+    console.log(e);
     res.status(400).send(e);
   }
 });
