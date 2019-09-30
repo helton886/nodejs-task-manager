@@ -14,11 +14,12 @@ services:
     volumes:
       - ./backend:/usr/task-app
       # to make node_modules be create on docker, remove the comment below.
-      # - /usr/task-app/node_modules 
+      # - /usr/task-app/node_modules
     networks:
       - web
+      - mongo
     depends_on:
       - db
     ports:
       - 3000:3000
-    # command: bash -c "cd /usr/task-app && ls && npm i && npm run dev"
+    command: bash -c "cd /usr/task-app && npm run dev"
