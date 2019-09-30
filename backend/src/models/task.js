@@ -12,13 +12,4 @@ const Task = mongoose.model('Task', {
   },
 });
 
-// const test = new Task({
-//   description: 'Try harder!',
-// });
-
-// test
-//   .save()
-//   .then(result => console.log(result))
-//   .catch(error => console.log(error));
-
 module.exports = Task;

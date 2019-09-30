@@ -58,6 +58,7 @@ userSchema.methods.generateAuthToken = async function() {
   return token;
 };
 
+// find the user by email, then check if the password matches the hashed one on mongodb
 userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
 
@@ -80,16 +81,5 @@ userSchema.pre('save', async function(next) {
 });
 
 const User = mongoose.model('User', userSchema);
-
-// const test = new User({
-//   name: 'Helton',
-//   email: 'Teste@gmail.com',
-//   password: '12357777',
-// });
-
-// test
-//   .save()
-//   .then(result => console.log(result))
-//   .catch(error => console.log(error));
 
 module.exports = User;
