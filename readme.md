@@ -5,5 +5,7 @@
 <ul>
 <li>Express;</li>
 <li>Mongoose;</li>
-<li>JWT;</li>
+<li>bcrypt;</li>
+<li>Token;</li>
+<li>Auth;</li>
 </ul>
