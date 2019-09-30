@@ -58,6 +58,17 @@ userSchema.methods.generateAuthToken = async function() {
   return token;
 };
 
+//hidding password and session tokens
+userSchema.methods.toJSON = function() {
+  const user = this;
+  const userObject = user.toObject();
+
+  delete userObject.password;
+  delete userObject.tokens;
+
+  return userObject;
+};
+
 // find the user by email, then check if the password matches the hashed one on mongodb
 userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
