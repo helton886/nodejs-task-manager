@@ -3,6 +3,7 @@
 <h4>I've been learning node.js and made this app to improve the knowledge!</h4>
 
 <ul>
+<li>Docker;</li>
 <li>Express;</li>
 <li>Mongoose;</li>
 <li>bcrypt;</li>
