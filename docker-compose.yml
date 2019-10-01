@@ -22,4 +22,5 @@ services:
       - db
     ports:
       - 3000:3000
-    command: bash -c "cd /usr/task-app && npm run dev"
+    working_dir: /usr/task-app
+    command: bash -c "npm run dev"
