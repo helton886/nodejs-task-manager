@@ -6,7 +6,7 @@ const taskRouter = require('./routers/task');
 const app = express();
 
 //app config
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(express.json());
 
 //setting routers
