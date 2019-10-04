@@ -10,4 +10,5 @@
 <li>Token;</li>
 <li>Auth;</li>
 <li>File Upload;</li>
+<li>Tests with Jest;</li>
 </ul>
