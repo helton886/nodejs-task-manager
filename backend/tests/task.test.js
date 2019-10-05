@@ -31,7 +31,7 @@ test('Should not delete task from userOne', async () => {
   request(app)
     .delete(`/tasks/${taskOne._id}`)
     .set('Authorization', `Bearer ${userTwo.tokens[0].token}`)
-    .expect(500);
+    .expect(404);
 
   // Assert that the task is still there
   const task = await Task.findById(taskOne._id);
