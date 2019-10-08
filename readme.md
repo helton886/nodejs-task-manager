@@ -18,7 +18,7 @@
 If you have docker, you can simply run the commands
 
 ```docker
-npm i && npm run dev
+docker-compose up
 ```
 
 otherwise, inside /task-app you can use:
