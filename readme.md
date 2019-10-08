@@ -1,6 +1,6 @@
-<h3>Task manager web app with nodejs</h3>
+## Task manager web app with nodejs
 
-<h4>I've been learning node.js and made this app to improve the knowledge!</h4>
+### I've been learning node.js and made this app to improve the knowledge!
 
 <ul>
 <li>Docker;</li>
@@ -12,3 +12,20 @@
 <li>File Upload;</li>
 <li>Tests with Jest;</li>
 </ul>
+
+### How to use?
+
+If you have docker, you can simply run the commands
+
+```docker
+npm i && npm run dev
+```
+
+otherwise, inside /task-app you can use:
+
+```bash
+npm i
+npm run dev
+```
+
+Make sure you have mongodb installed and change the URL's on dev.env.
